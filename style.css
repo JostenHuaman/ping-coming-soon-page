@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --Blue: hsl(223, 87%, 63%);
+    --Pale-Blue: hsl(223, 100%, 88%);
+    --Light-Red: hsl(354, 100%, 66%);
+    --Gray: hsl(0, 0%, 59%);
+    --Very-Dark-Blue: hsl(209, 33%, 12%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Libre Franklin";
+}
+
+body {
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+        margin: 50px 0 30px;
+        width: 60px;
+    }
+
+    & h2 {
+        font-size: 1.2em;
+        font-weight: 300;
+        color: var(--Gray);
+        margin: 20px 0;
+
+        & span {
+            color: var(--Very-Dark-Blue);
+            font-weight: 700;
+        }
+    }
+
+    & p {
+        font-size: 0.6em;
+        margin-bottom: 30px;
+        color: var(--Very-Dark-Blue);
+        font-weight: 600;
+    }
+    & form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & input {
+        padding: 15px 30px;
+        width: 280px;
+        border-radius: 40px;
+        border: 1px solid var(--Pale-Blue);      
+        &::placeholder{
+            color: var(--Pale-Blue);
+        }
+        &:focus{
+            outline: none;
+        }
+        
+
+    }
+
+    .placeholder-black{
+        &::placeholder{
+            color: black;
+            font-weight: 600;
+        }  
+    }
+
+    & .error{
+        margin-bottom: 20px;
+        margin-top: 10px;
+        color: var(--Light-Red);
+        font-style: italic;
+        display: none;
+    }
+
+    & button {
+        padding: 15px;
+        width: 280px;
+        border-radius: 40px;
+        margin-top: 20px;
+        color: white;
+        background-color: var(--Blue);
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+
+    & .dashboard {
+        margin-top: 80px;
+        width: 90%;
+    }
+
+    & .icons {
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+
+        & img {
+            width: 40px;
+            border: 1px solid var(--Pale-Blue);
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 20px;
+            cursor: pointer;
+            &:hover {
+                background-color: var(--Very-Dark-Blue);
+            }
+        }
+    }
+
+    & .copy {
+        font-size: 0.6em;
+        color: var(--Gray);
+        margin-top: 20px;
+        font-weight: 200;
+    }
+}
+
+.attribution {
+    font-size: 0.5em;
+    text-align: center;
+    margin: 0px 0px 10px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+@media (min-width:1000px){
+    .container{
+        & img{
+            width: 100px;
+        }
+        & h2{
+            font-size: 1.5em;
+        }
+        & p{
+            font-size: 0.8em;
+        };
+        & form{
+            margin-top: 20px;
+            flex-direction: row;
+            align-items: flex-start;
+            & div{
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                & .error{
+
+                }
+            }
+            & button{
+                margin: 0 0 0 20px;
+            }
+        }
+        & .dashboard{
+            width: 60%;
+        }
+
+        & .icons{
+            margin-top: 10px;
+        }
+    }
+}
